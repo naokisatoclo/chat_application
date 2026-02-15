@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.chat_application.repository.UserRepository">
+    <select id="findByEmail" resultType="com.example.chat_application.repository.entity.Users" parameterType="string">
+        SELECT
+        id,
+        mailaddress,
+        password,
+        user_name,
+        is_stopped,
+        created_at,
+        updated_at
+        FROM users
+        WHERE mailaddress = #{mailaddress}
+    </select>
+</mapper>
